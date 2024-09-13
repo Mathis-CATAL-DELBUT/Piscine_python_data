@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="ftpackage",
+    name="ft_package",
     version="0.0.1",
     author="mcatal-d",
     author_email="mcatal-d@student.42.fr",
