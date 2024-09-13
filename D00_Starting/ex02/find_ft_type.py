@@ -1,7 +1,8 @@
 ft_list = ["Hello", "tata!"]
 ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "tutu!"}
-ft_dict = {"Hello" : "titi!"}
+ft_dict = {"Hello": "titi!"}
+
 
 def all_thing_is_obj(object: any) -> int:
     type_obj = type(object)

@@ -14,9 +14,10 @@ reference_datetime_month = reference_datetime.strftime("%B")
 reference_datetime_year = reference_datetime.year
 reference_datetime_day = reference_datetime.day
 
-print(f"Seconds since {reference_datetime_month} {reference_datetime_day}, {reference_datetime_year}: \
-{formatted_seconds} or {scientific_notation} in scientific notation")
+print(
+    f"Seconds since {reference_datetime_month} {reference_datetime_day},\
+{reference_datetime_year}: \
+{formatted_seconds} or {scientific_notation} in scientific notation"
+)
 
 print(current_date)
-
-

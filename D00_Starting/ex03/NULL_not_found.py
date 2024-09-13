@@ -6,6 +6,7 @@ Zero = 0
 Empty = ""
 Fake = False
 
+
 def NULL_not_found(value):
     type_value = type(value)
     # print(value)
@@ -27,6 +28,7 @@ def NULL_not_found(value):
     else:
         print("Type not found")
     return 1
+
 
 NULL_not_found(Nothing)
 NULL_not_found(Garlic)
