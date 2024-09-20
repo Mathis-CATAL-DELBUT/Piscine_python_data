@@ -11,7 +11,7 @@ def main():
     plt.show()
     print(f"The shape of the image is: {array_image.shape}")
     print(array_image)
-    image_zoom = zoom(400, 400, array_image)
+    image_zoom = zoom(10, 500, array_image)
     print(f"New shape after slicing: {image_zoom.shape}")
     new_image = Image.fromarray(image_zoom)
     plt.imshow(new_image)

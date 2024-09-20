@@ -1,4 +1,4 @@
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[int | float], weight: list[int | float]):
     lenght = len(height)
     if len(height) > len(weight):
         lenght = len(weight)
