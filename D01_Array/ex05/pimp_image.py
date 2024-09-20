@@ -55,8 +55,10 @@ def ft_grey(array) -> np.array:
     """
     convert an image to grayscale
     """
-    grey_array = np.zeros((array.shape[0], array.shape[1], 1), dtype=np.uint8)
-    grey_array[:, :, 0] = (np.sum(array, axis=2) / 3).astype(np.uint8)
+    grey_array = np.zeros((array.shape), dtype=np.uint8)
+    grey_array[:, :, 0] = array[:, :, 1]
+    grey_array[:, :, 1] = array[:, :, 1]
+    grey_array[:, :, 2] = array[:, :, 1]
     plt.imshow(grey_array, cmap="gray")
     plt.show()
     print("Converts the image to grayscale")
