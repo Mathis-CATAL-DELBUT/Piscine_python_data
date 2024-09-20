@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-def load_image(path: str):
+def ft_load(path: str):
     """
     Load an image from a given path
     """

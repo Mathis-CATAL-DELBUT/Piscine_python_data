@@ -1,33 +1,15 @@
-from load_image import load_image
-from matplotlib import pyplot as plt
-import numpy as np
+from load_image import ft_load
+from pimp_image import ft_invert
+from pimp_image import ft_red
+from pimp_image import ft_green
+from pimp_image import ft_blue
+from pimp_image import ft_grey
 
+array = ft_load("landscape.jpg")
+ft_invert(array)
+ft_red(array)
+ft_green(array)
+ft_blue(array)
+ft_grey(array)
 
-def to_gray(image: np.array):
-    """
-    Convert an image to grayscale
-    """
-    grey_image = np.zeros((image.shape[0], image.shape[1], 1), dtype=np.uint8)
-    for i in range(image.shape[0]):
-        for j in range(image.shape[1]):
-            grey_image[i][j][0] = int(
-                round(
-                    image[i][j][0] * 0.2989
-                    + image[i][j][1] * 0.587
-                    + image[i][j][2] * 0.114
-                )
-            )
-
-    return grey_image
-
-
-def main():
-    path = "animal.jpeg"
-    image = load_image(path)
-
-    plt.imshow(image)
-    plt.show()
-
-
-if __name__ == "__main__":
-    main()
+print(ft_invert.__doc__)
