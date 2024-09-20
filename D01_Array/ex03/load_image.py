@@ -9,4 +9,4 @@ def load_image(path: str):
     if type(path) is not str or Image.open(path) is None:
         print("Invalid path")
         exit(1)
-    return Image.open(path), np.array(Image.open(path))
+    return np.array(Image.open(path)), np.array(Image.open(path))
