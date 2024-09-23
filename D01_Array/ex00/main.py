@@ -10,4 +10,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except TypeError as e:
+        print(f"An TypeError occurred: {e}")
+    except ValueError as e:
+        print(f"An ValueError occurred: {e}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
