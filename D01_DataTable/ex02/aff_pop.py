@@ -3,8 +3,11 @@ import matplotlib.pyplot as plt
 
 
 def aff_pop(df: pd.DataFrame):
+    """
+    This function plots the population projections for France and Belgium.
+    """
     if "France" not in df.index or "Belgium" not in df.index:
-        print("Les données pour la France ou la Belgique ne sont pas disponibles.")
+        print("Donnees indisponibles pour la France et la Belgique")
         return
 
     france = df.loc["France", "1800":"2050"]
