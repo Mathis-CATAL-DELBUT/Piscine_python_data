@@ -1,12 +1,20 @@
-from PIL import Image
 import numpy as np
+from PIL import Image
 
 
-def load_image(path: str):
+def ft_load(path: str) -> np.ndarray:
     """
     Load an image from a given path
     """
-    if type(path) is not str or Image.open(path) is None:
-        print("Invalid path")
-        exit(1)
-    return np.array(Image.open(path)), np.array(Image.open(path))
+    if type(path) is not str:
+        raise TypeError("Invalid type")
+    try:
+        image = Image.open(path)
+        image = np.array(image)
+    except PermissionError:
+        raise ValueError("Permission denied")
+    except FileNotFoundError:
+        raise ValueError("File not found")
+    except Exception:
+        raise ValueError("An error occurred")
+    return image

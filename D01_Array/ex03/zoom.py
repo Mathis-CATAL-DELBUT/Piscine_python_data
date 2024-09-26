@@ -8,15 +8,17 @@ def zoom(X: int, Y: int, array_image: np.array):
     middle = []
     middle.append(array_image.shape[0] // 2)
     middle.append(array_image.shape[1] // 2)
-    print(middle)
-    print(X / 2 + middle[0], array_image.shape[0])
     if (
         (X / 2 + middle[0] > array_image.shape[0])
         or (middle[0] - X / 2 < 0)
         or (Y / 2 + middle[1] > array_image.shape[1])
         or (middle[1] - Y / 2 < 0)
     ):
-        print("The zoom is not possible")
+        raise ValueError("Out of range")
+    if X <= 0 or Y <= 0:
+        raise ValueError("Negative value")
+    if type(X) is not int or type(Y) is not int:
+        raise TypeError("Invalid type")
     start_x = array_image.shape[0] // 2 - X // 2
     end_x = array_image.shape[0] // 2 + X // 2
     start_y = array_image.shape[1] // 2 - Y // 2

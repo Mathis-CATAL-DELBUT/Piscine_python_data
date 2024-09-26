@@ -28,10 +28,6 @@ def main():
     """
     test filter and ft_filter functions
     """
-    # print(filter.__doc__)
-    # print(ft_filter.__doc__)
-    # print(is_even.__doc__)
-    # print(is_odd.__doc__)
 
     f = ft_filter(is_even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     print(list(f))

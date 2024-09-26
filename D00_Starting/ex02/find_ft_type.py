@@ -1,10 +1,6 @@
-ft_list = ["Hello", "tata!"]
-ft_tuple = ("Hello", "toto!")
-ft_set = {"Hello", "tutu!"}
-ft_dict = {"Hello": "titi!"}
-
-
-def all_thing_is_obj(object: any) -> int:
+def all_thing_is_obj(object: any = None) -> int:
+    if object is None:
+        return 42
     type_obj = type(object)
     if type_obj == list:
         print(f"List : {type_obj}")
@@ -19,12 +15,3 @@ def all_thing_is_obj(object: any) -> int:
     else:
         print("Type not found")
     return 42
-
-
-all_thing_is_obj(ft_list)
-all_thing_is_obj(ft_tuple)
-all_thing_is_obj(ft_set)
-all_thing_is_obj(ft_dict)
-all_thing_is_obj("Brian")
-all_thing_is_obj("Toto")
-print(all_thing_is_obj(10))

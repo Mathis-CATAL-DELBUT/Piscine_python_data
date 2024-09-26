@@ -42,8 +42,12 @@ NESTED_MORSE = {
 
 
 def main():
+    """
+    Main function of the program
+    """
     try:
         assert len(sys.argv) == 2
+        assert len(sys.argv[1]) > 0
         assert all(letter.isalnum() or letter == " " for letter in sys.argv[1])
     except AssertionError:
         print("AssertionError: the arguments are bad")

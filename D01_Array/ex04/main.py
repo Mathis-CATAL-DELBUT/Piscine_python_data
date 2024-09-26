@@ -1,4 +1,4 @@
-from load_image import load_image
+from load_image import ft_load
 from zoom import zoom
 from rotation import rotate
 from matplotlib import pyplot as plt
@@ -25,12 +25,12 @@ def to_gray(image: np.array):
 
 def main():
     path = "animal.jpeg"
-    image = load_image(path)
+    image = ft_load(path)
 
     image = zoom(400, 400, image)
     gray_image = to_gray(image)
 
-    print(f"The shape of the image is: {gray_image.shape}")
+    print(f"The shape of image is: {gray_image.shape}")
     print(gray_image)
 
     rotate_image = rotate(gray_image)
@@ -45,4 +45,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as e:
+        print("An ValueError occurred: ", e)
+    except TypeError as e:
+        print("An TypeError occurred: ", e)
+    except Exception as e:
+        print("An error occurred: ", e)

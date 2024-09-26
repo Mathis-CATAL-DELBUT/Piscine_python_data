@@ -1,4 +1,4 @@
-from load_image import load_image
+from load_image import ft_load
 from zoom import zoom
 from PIL import Image
 from matplotlib import pyplot as plt
@@ -25,11 +25,11 @@ def to_gray(image: np.array):
 
 def main():
     path = "animal.jpeg"
-    image, array_image = load_image(path)
+    image = ft_load(path)
     print(f"The shape of the image is: {image.shape}")
-    print(array_image)
+    print(image)
 
-    image_zoom = zoom(400, 400, array_image)
+    image_zoom = zoom(400, 400, image)
     new_image = Image.fromarray(image_zoom)
     new_image = np.array(new_image)
     gray_image = to_gray(new_image)
@@ -40,4 +40,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as e:
+        print("An ValueError occurred: ", e)
+    except TypeError as e:
+        print("An TypeError occurred: ", e)
+    except Exception as e:
+        print("An error occurred: ", e)

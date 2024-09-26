@@ -1,19 +1,11 @@
-import math
-
-Nothing = None
-Garlic = float("NaN")
-Zero = 0
-Empty = ""
-Fake = False
-
-
-def NULL_not_found(value):
+def NULL_not_found(value=-1):
+    if value == -1:
+        return 1
     type_value = type(value)
-    # print(value)
     if value is None:
         print(f"Nothing: {value} {type_value}")
         return 0
-    elif isinstance(value, float) and math.isnan(value):
+    elif isinstance(value, float) and value != value:
         print(f"Cheese: {value} {type_value}")
         return 0
     elif value is False:
@@ -28,11 +20,3 @@ def NULL_not_found(value):
     else:
         print("Type not found")
     return 1
-
-
-NULL_not_found(Nothing)
-NULL_not_found(Garlic)
-NULL_not_found(Zero)
-NULL_not_found(Empty)
-NULL_not_found(Fake)
-print(NULL_not_found("Brian"))

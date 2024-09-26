@@ -19,7 +19,16 @@ def main():
     """
 
     try:
+        first = sys.argv[1]
+        second = int(sys.argv[2])
+    except ValueError:
+        first = -1
+        second = None
+
+    try:
         assert len(sys.argv) == 3
+        assert type(first) is str
+        assert type(second) is int
     except AssertionError:
         print("AssertionError: the arguments are bad")
         exit(1)

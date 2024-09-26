@@ -8,8 +8,13 @@ except AssertionError:
     exit(1)
 
 try:
-    assert int(sys.argv[1])
+    arg = int(sys.argv[1])
 except ValueError:
+    arg = sys.argv[1]
+
+try:
+    assert type(arg) is int
+except AssertionError:
     print("AssertionError: argument is not an integer")
     exit(1)
 

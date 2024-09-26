@@ -1,6 +1,26 @@
 import sys
 
 
+def main():
+    """
+    Main function of the program
+    """
+
+    if len(sys.argv) != 2:
+        print("the program takes 1 argument as parameter")
+        exit(1)
+    string = sys.argv[1]
+    lenght = len(string)
+    lowers, uppers, ponctuations, spaces, digits = count(string, 0, 0, 0, 0, 0)
+
+    print(f"The text contains {lenght} characters:")
+    print(f"{uppers} upper letters")
+    print(f"{lowers} lower letters")
+    print(f"{ponctuations} ponctuation marks")
+    print(f"{spaces} spaces")
+    print(f"{digits} digits")
+
+
 def count(string, lowers, uppers, ponctuations, spaces, digits):
     """
     Count the number of lower letters, upper letters, ponctuation marks,
@@ -18,29 +38,6 @@ def count(string, lowers, uppers, ponctuations, spaces, digits):
         else:
             ponctuations += 1
     return lowers, uppers, ponctuations, spaces, digits
-
-
-def main():
-    """
-    Main function of the program
-    """
-
-    # print(count.__doc__)
-    # print(main.__doc__)
-
-    if len(sys.argv) != 2:
-        print("the program takes 1 argument as parameter")
-        exit(1)
-    string = sys.argv[1]
-    lenght = len(string)
-    lowers, uppers, ponctuations, spaces, digits = count(string, 0, 0, 0, 0, 0)
-
-    print(f"The text contains {lenght} characters:")
-    print(f"{uppers} upper letters")
-    print(f"{lowers} lower letters")
-    print(f"{ponctuations} ponctuation marks")
-    print(f"{spaces} spaces")
-    print(f"{digits} digits")
 
 
 if __name__ == "__main__":
