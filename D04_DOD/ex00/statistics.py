@@ -22,7 +22,7 @@ def ft_quartile(*args: any) -> tuple:
         n = len(args)
         q1 = args[n // 4] if n % 4 == 0 else args[n // 4]
         q3 = args[3 * n // 4] if n % 4 == 0 else args[3 * n // 4]
-        return (q1, q3)
+        return (float(q1), float(q3))
 
 
 def ft_std(*args: any) -> float:
